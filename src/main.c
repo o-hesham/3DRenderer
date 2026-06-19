@@ -65,12 +65,12 @@ void setup(void)
     // Initialize frustum planes with a point and a normal
     init_frustum_planes(fovx, fovy, znear, zfar);
 
-    load_mesh("./assets/models/spaceship.obj", "./assets/textures/spaceship.png", vec3_new(1, 1, 1), vec3_new(0, 0, 5), vec3_new(0, M_PI / 2, 0));
+    // load_mesh("./assets/models/spaceship.obj", "./assets/textures/spaceship.png", vec3_new(1, 1, 1), vec3_new(0, 0, 5), vec3_new(0, M_PI / 2, 0));
 
-    // load_mesh("./assets/models/runway.obj", "./assets/textures/runway.png", vec3_new(1, 1, 1), vec3_new(0, -1.5, 23), vec3_new(0, 0, 0));
-    // load_mesh("./assets/models/f22.obj", "./assets/textures/f22.png", vec3_new(1, 1, 1), vec3_new(0, -1.3, 5), vec3_new(0, -M_PI / 2, 0));
-    // load_mesh("./assets/models/efa.obj", "./assets/textures/efa.png", vec3_new(1, 1, 1), vec3_new(-2, -1.3, 9), vec3_new(0, -M_PI / 2, 0));
-    // load_mesh("./assets/models/f117.obj", "./assets/textures/f117.png", vec3_new(1, 1, 1), vec3_new(2, -1.3, 9), vec3_new(0, -M_PI / 2, 0));
+    load_mesh("./assets/models/runway.obj", "./assets/textures/runway.png", vec3_new(1, 1, 1), vec3_new(0, -1.5, 23), vec3_new(0, 0, 0));
+    load_mesh("./assets/models/f22.obj", "./assets/textures/f22.png", vec3_new(1, 1, 1), vec3_new(0, -1.3, 5), vec3_new(0, -M_PI / 2, 0));
+    load_mesh("./assets/models/efa.obj", "./assets/textures/efa.png", vec3_new(1, 1, 1), vec3_new(-2, -1.3, 9), vec3_new(0, -M_PI / 2, 0));
+    load_mesh("./assets/models/f117.obj", "./assets/textures/f117.png", vec3_new(1, 1, 1), vec3_new(2, -1.3, 9), vec3_new(0, -M_PI / 2, 0));
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -367,8 +367,6 @@ void update(void)
     for (int mesh_index = 0; mesh_index < get_num_meshes(); mesh_index++)
     {
         mesh_t *mesh = get_mesh(mesh_index);
-
-        mesh->rotation.y += 0.006;
 
         // Process the graphics pipeline stages for every mesh of our 3D scene
         process_graphics_pipeline_stages(mesh);
