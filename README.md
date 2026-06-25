@@ -2,6 +2,10 @@
 
 A CPU software 3D renderer written in C (C99). It uses SDL2 for windowing and input, decodes PNG textures via upng, and renders textured OBJ meshes through a basic lighting pipeline.
 
+## Screenshots
+
+![3D renderer runway scene](assets/screenshots/runway-scene.png)
+
 ## Features
 - Software rasterizer with z-buffer.
 - OBJ mesh loading (vertices, UVs, normals) and PNG textures.
