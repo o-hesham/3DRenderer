@@ -67,7 +67,13 @@ The output binary is `bin/renderer.exe`. Ensure `bin/SDL2.dll` is present next t
 - Models: `assets/models/*.obj`
 - Textures: `assets/textures/*.png`
 
-The default scene loads `assets/models/spaceship.obj` with `assets/textures/spaceship.png`. To swap models or textures, update the `load_mesh(...)` call in `src/main.c`. You can load multiple meshes by calling `load_mesh(...)` more than once in `setup()`.
+The default scene loads a runway plus three aircraft meshes:
+- `assets/models/runway.obj` with `assets/textures/runway.png`
+- `assets/models/f22.obj` with `assets/textures/f22.png`
+- `assets/models/efa.obj` with `assets/textures/efa.png`
+- `assets/models/f117.obj` with `assets/textures/f117.png`
+
+Each mesh uses the scale, translation, and rotation passed to `load_mesh(...)` in `setup()`. The scene is static by default; the update loop processes each mesh without applying an automatic per-frame model rotation. To swap models, textures, or placement, update the `load_mesh(...)` calls in `src/main.c`.
 
 ## Configuration Tips
 - Projection settings (FOV/near/far) are set in `src/main.c` inside `setup()`.
